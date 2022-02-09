@@ -1,6 +1,7 @@
 package LO1_program_execution.scala
 
 object ArrayListMap {
+
   def main(args: Array[String]): Unit = {
     var arr: Array[Int]=Array(2,3,4)
     var x:Int=arr(1)
