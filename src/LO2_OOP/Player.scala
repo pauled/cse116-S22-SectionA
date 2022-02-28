@@ -1,7 +1,8 @@
 package LO2_OOP
 
-class Player (var xLoc:Double,var yLoc:Double,
-              var maxHitPoints:Int){
+class Player ( xLoc:Double, yLoc:Double,
+              var maxHitPoints:Int)
+    extends GameObject (xLoc,yLoc){
   var health:Int=this.maxHitPoints
   val damageDealt:Int=4
 
@@ -11,13 +12,9 @@ class Player (var xLoc:Double,var yLoc:Double,
   def takeDamage(damage: Int):Unit={
     this.health-=damage
   }
-  def move(dx: Double,yLoc:Double):Unit={
-    this.xLoc=dx
-    this.yLoc=yLoc
-  }
+
   override def toString():String={
-    var out:String="xLocation: "+this.xLoc
-    out+=" yLocation: "+this.yLoc+" health: "
+    var out:String=super.toString()+" health: "
     out+=this.health+"/"+this.maxHitPoints
     out
   }

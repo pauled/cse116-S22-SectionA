@@ -10,5 +10,8 @@ object RunPlayer {
     player1.attack(player2)
     val varName:Player=player2
     println(varName)
+    var h1:HealthPotion=
+      new HealthPotion(0,0,10)
+    h1.move(2,3)
   }
 }
