@@ -7,6 +7,14 @@ class HealthPotion (x:Double,y:Double,
     player.health+=increase
   }
   def increaseStrength(factor:Int):Unit={
-    increase*=factor
+    this.increase*=factor
+  }
+
+  override def toString(): String = {
+    this.xLoc1
+    var out:String="Health potion: "
+    out+=super.toString()+" size: "
+    out+=this.increase
+    out
   }
 }

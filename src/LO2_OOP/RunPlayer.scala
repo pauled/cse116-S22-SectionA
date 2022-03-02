@@ -13,5 +13,6 @@ object RunPlayer {
     var h1:HealthPotion=
       new HealthPotion(0,0,10)
     h1.move(2,3)
+    println(h1)
   }
 }

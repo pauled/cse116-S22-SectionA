@@ -1,8 +1,8 @@
 package LO2_OOP
 
-class Player ( xLoc:Double, yLoc:Double,
+class Player ( xLoc1:Double, yLoc1:Double,
               var maxHitPoints:Int)
-    extends GameObject (xLoc,yLoc){
+    extends GameObject (xLoc1,yLoc1){
   var health:Int=this.maxHitPoints
   val damageDealt:Int=4
 
