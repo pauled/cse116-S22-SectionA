@@ -12,7 +12,21 @@ object RunPlayer {
     println(varName)
     var h1:HealthPotion=
       new HealthPotion(0,0,10)
+    var h2:HealthPotion=
+      new HealthPotion(1,2,10)
+    var h3=h2
+    println("h1==h2:"+(h1==h2))
+    println("h2==h3:"+(h2==h3))
+
     h1.move(2,3)
     println(h1)
+    var general:GameItem=new
+        Transporter(1,2,3,4)
+    var tansp:Transporter=new
+        Transporter(5,6,7,8)
+    var high:GameObject=new HealthPotion(1,2,10)
+    player1.pickUpItem(general)
+    player1.pickUpItem(tansp)
+    player1.pickUpItem(h1)
   }
 }

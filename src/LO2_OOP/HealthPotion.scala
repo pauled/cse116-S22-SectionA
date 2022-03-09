@@ -17,4 +17,11 @@ class HealthPotion (x:Double,y:Double,
     out+=this.increase
     out
   }
+
+  override def equals(obj: Any): Boolean = {
+    obj match{
+      case hp:HealthPotion => this.increase==hp.increase
+      case _=>false
+    }
+  }
 }
