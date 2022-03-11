@@ -18,4 +18,7 @@ class Student {
   def startNewClass():Unit={
     this.mentalState=new Calm(this)
   }
+  def failClass():Unit={
+    this.mentalState=new Depressed(this)
+  }
 }
