@@ -87,11 +87,27 @@ object FirstOrderFunctions {
     val numbersSquared:List[Double]=numbers3.map((Math.pow(_,2.0)))
     numbersSquared.foreach(println)
     //yield
+    val numbersSquared2:List[Double]=(for(number<-numbers3) yield {
+      Math.pow(number,2.0)
+    }).toList
+    numbersSquared2.foreach(println)
     //reduce
+    var sumSquares:(Double,Double)=>Double=
+      (acc:Double,b:Double)=>acc+Math.pow(b,2.0)
+    var sumofsquares:Double=numbers3.reduce(_+Math.pow(_,2.0))
+    var sumofsquares2:Double=numbers3.reduce(sumSquares)
+    println(sumofsquares)
     //fold
-    //susm
+    var mathStuff:Double=numbers3.fold(1.0)(_*Math.pow(_,2.0))
+    println(mathStuff)
+    //sum
+    println(numbers3.sum)
     //distinct
+    val numbers4:List[Int]=List(1,1,2,3,3,3,4,4,5,6,7,8,8,8,8)
+    val distinctVal=numbers4.distinct
+    println(distinctVal)
     //slice
+    println(numbers4.slice(2,7))
     //reverse
 
   }
