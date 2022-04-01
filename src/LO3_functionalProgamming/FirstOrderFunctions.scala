@@ -66,8 +66,8 @@ object FirstOrderFunctions {
     val sortForMyWork=distanceComparator(myWork)
     val distances=selectionSortGeneral(houseLocations,sortForMyWork)*/
     var numbers=List(5,-23,7,-8,4,10)
-    //val sorted=numbers.sortWith(_>_)
-    val sorted=numbers.sortWith((a:Int,b:Int)=>a>b)
+    val sorted=numbers.sortWith(_>_)
+    //val sorted=numbers.sortWith(  )
     println(sorted)
     var numbers2:Array[Int]=Array(4,3,5)
     //var out=selectionSortGeneral(numbers2,compare)
