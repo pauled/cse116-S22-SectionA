@@ -56,8 +56,8 @@ object FirstOrderFunctions {
       Math.pow(v1.z-v2.z))
   }
   def distanceComparator(referencePoint:PhysicsVector):
-     (PhysicsVector,PhysicsVector) => Boolean= {
-        distance(v1, referencePoint) < distance(v2, referenePoint)
+     (v1:PhysicsVector,v2:PhysicsVector) => Boolean= {
+        distance(v1, referencePoint) < distance(v2, referencePoint)
       }
   }*/
 
