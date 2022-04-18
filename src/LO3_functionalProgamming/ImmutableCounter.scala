@@ -23,5 +23,8 @@ object RunImmutableCounter{
     val counter2=updateCounter(3,counter)
     counter.printCounter()
     counter2.printCounter()
+    var counter3=counter.decrease()
+    counter3=counter3.decrease()
+    counter3=counter3.increase()
   }
 }

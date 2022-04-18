@@ -13,6 +13,7 @@ class Queue [A]{
     } else {
       this.back.next=new LinkedListNode[A](element,
         null)
+      this.back=this.back.next
     }
   }
   //dequeue
@@ -23,5 +24,33 @@ class Queue [A]{
       this.back=null
     }
     toReturn
+  }
+
+  override def toString: String = {
+    front.toString
+  }
+}
+
+object runQueue{
+  def main(args: Array[String]): Unit = {
+    val myQueue:Queue[Int]=new Queue()
+    myQueue.enqueue(1)
+    myQueue.enqueue(2)
+    myQueue.enqueue(3)
+    println(myQueue)
+    println()
+    val temp=myQueue.dequeue()
+    println(temp)
+    println(myQueue)
+
+    val deck:Queue[Card]=new Queue()
+    val suits:Array[String]=Array("hearts",
+      "clubs","diamonds","spades")
+    for (suit <- suits){
+      for (i <- 1 to 13){
+        deck.enqueue(new Card(suit,i))
+      }
+    }
+    println(deck)
   }
 }
