@@ -16,35 +16,35 @@ class BinaryTreeNode [A](var value:A,
     }
     out
   }
-  def inOrderTraversal[A](node: BinaryTreeNode[A]):String={
+  def inOrderTraversal[B](node:BinaryTreeNode[B]):String={
     //left
-    //right
     //top
+    //right
+
     var out:String=""
     if (node!=null) {
       //left
-      out += inOrderTraversal(node.left)+" "
-      //right
-      out += inOrderTraversal(node.right)+" "
+      out += inOrderTraversal(node.left)
       //top
-      out += node.value.toString+" "
+      out += node.value+" "
+      //right
+      out += inOrderTraversal(node.right)
+
     }
     out
-
   }
-  def postOrderTraversal[A](node: BinaryTreeNode[A]):String={
+  def postOrderTraversal[B](node:BinaryTreeNode[B]):String={
     //left
-    //top
     //right
+    //top
     var out:String=""
     if (node!=null) {
       //left
-      out += postOrderTraversal(node.left)+" "
-      //top
-      out += node.value.toString+" "
+      out += postOrderTraversal(node.left)
       //right
-      out += postOrderTraversal(node.right)+" "
-
+      out += postOrderTraversal(node.right)
+      //top
+      out += node.value+" "
     }
     out
   }
