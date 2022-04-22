@@ -1,5 +1,7 @@
 package LO4_dataStructures
 
+import LO2_OOP.GameObject
+
 class BinarySearchTree [T](comparator: (T,T)=>Boolean){
   var root:BinaryTreeNode[T]=null
   def insert(a: T):Unit={
@@ -42,6 +44,24 @@ class BinarySearchTree [T](comparator: (T,T)=>Boolean){
 }
 
 object runThis{
+  def sortString2(a:String,b:String):Boolean={
+    if (a.length<b.length){
+      true
+    } else if (a.length==b.length && a<b){
+      true
+    } else {
+      false
+    }
+  }
+  def sortGameObject(a:GameObject,b:GameObject):Boolean={
+    val aDist=a.xLoc*a.xLoc+a.yLoc*a.yLoc
+    val bDist=b.xLoc*b.xLoc+b.yLoc*b.yLoc
+    if (aDist<bDist){
+      true
+    } else {
+      false
+    }
+  }
   def main(args: Array[String]): Unit = {
     val intLessThan=(a:Int,b:Int)=>a>b
     val bst=new BinarySearchTree[Int](intLessThan)
@@ -52,7 +72,25 @@ object runThis{
     bst.insert(7)
     bst.insert(14)
     bst.insert(-3)
-    println(bst.root.postOrderTraversal(bst.root))
+    println(bst.root.inOrderTraversal(bst.root))
     val node=bst.find(4)
+
+    //holds string
+    //sort by length then by alphabetical order
+    //a b c aa ab cd aaa
+    val sortString=(a:String,b:String)=> a<b
+    val bst2=new BinarySearchTree[String](sortString2)
+    bst2.insert("aa")
+    bst2.insert("az")
+    bst2.insert("bbb")
+    bst2.insert("acd")
+    bst2.insert("acdc")
+    bst2.insert("b")
+    bst2.insert("a")
+    bst2.insert("c")
+    bst2.insert("caa")
+    println(bst2.root.inOrderTraversal(bst2.root))
+
+    val bst3=new BinarySearchTree[GameObject](sortGameObject)
   }
 }
