@@ -27,7 +27,27 @@ class Queue [A]{
   }
 
   override def toString: String = {
-    front.toString
+    if (front!=null) {
+      front.toString
+    } else {
+      ""
+    }
+  }
+  def empty():Boolean={
+    this.front==null
+  }
+  def contains(node:A):Boolean={
+    var current:LinkedListNode[A]=this.front
+    while (current!=null){
+      //println("running while")
+      if (current.value==node){
+        //println("ever true")
+        return true
+      }
+      current=current.next
+    }
+    //println("false")
+    false
   }
 }
 
